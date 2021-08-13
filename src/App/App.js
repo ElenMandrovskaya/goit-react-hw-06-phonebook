@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import defaultComtacts from "../data/defaultContacts.json";
-import { Main, Section } from './App.styled';
+import { Main, Section, MainTitle } from './App.styled';
 import { ContactForm } from "../components/ContactForm/ContactForm";
 import { ContactList } from "../components/ContactList/ContactList";
 import { Filter } from "../components/Filter/Filter";
@@ -40,10 +40,12 @@ export default function App() {
   const removeContact = (contactId) => {
      setContacts(prevContacts => prevContacts.filter(contact => contact.id !== contactId))
   }
-    return (
+  return (
+    <>
+      <MainTitle>Phonebook</MainTitle>
       <Main>
         <Section>
-          <Title title={"Phonebook"} />
+          <Title title={"Add contact"} />
           <ContactForm
             onSubmit={addContact} />   
         </Section>
@@ -60,6 +62,7 @@ export default function App() {
             onDelete={removeContact} />
         </Section>
       </Main>
+      </>
   )
 }
 
