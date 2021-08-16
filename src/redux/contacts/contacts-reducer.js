@@ -1,0 +1,6 @@
+// {
+//   contacts: {
+//     items: [],
+//     filter: ''
+//   }
+// }
