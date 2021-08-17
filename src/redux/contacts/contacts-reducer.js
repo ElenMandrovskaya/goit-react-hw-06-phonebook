@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import defaultContacts from '../../data/defaultContacts.json'
+import contactsTypes from "./contacts-types";
 
 // {
 //   contacts: {
@@ -13,6 +14,8 @@ const initFilter = '';
 
 const itemReducer = (state = defaultContacts, action) => {
     switch (action.type) {
+        case contactsTypes.ADD:
+            return [...state, action.payload]
         default:
             return state
     }

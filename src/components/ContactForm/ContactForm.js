@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/contacts/contacts-actions';
 import { Form, Label, Input, Button } from "./ContactForm.styled";
 
-export function ContactForm({/*onSubmit*/}) {
+export function ContactForm() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const nameId = uuidv4();
   const telId = uuidv4();
+  const dispatch = useDispatch();
 
   const handleChange = (evt) => {
     const { name, value } = evt.currentTarget;
@@ -26,9 +29,9 @@ export function ContactForm({/*onSubmit*/}) {
     };
     
     const handleSubmit = (evt) => {
-    evt.preventDefault();
-    // onSubmit({ name, number });
-    resetForm();
+      evt.preventDefault();
+      dispatch(addContact({name, number}))
+      resetForm();
    };
 
    const resetForm = () => {
@@ -74,6 +77,9 @@ export function ContactForm({/*onSubmit*/}) {
 ContactForm.propTypes = {
     onSubmit: PropTypes.func,
 };
+
+// FROM HW-3
+
 // export class ContactForm extends Component {
 //     state = {
 //         contacts: [],
