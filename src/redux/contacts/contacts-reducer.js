@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
 import defaultContacts from '../../data/defaultContacts.json'
 import contactsTypes from "./contacts-types";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // {
 //   contacts: {
@@ -9,15 +11,23 @@ import contactsTypes from "./contacts-types";
 //   }
 // }
 
-// const initItem = [];
+const initContacts = JSON.parse(localStorage.getItem("contacts")) ?? defaultContacts;
 const initFilter = '';
 
-const itemReducer = (state = defaultContacts, action) => {
+// const checkContact =
+//             // const existingСontact = state.map(item => item.name.toLowerCase() === action.payload.name.toLowerCase());
+//             // if (existingСontact) {
+//             //     return state
+//             // }
+const itemReducer = (state = initContacts, action) => {
     switch (action.type) {
         case contactsTypes.ADD:
+            localStorage.setItem("contacts", JSON.stringify([action.payload, ...state]));
             return [action.payload, ...state];
         case contactsTypes.REMOVE:
-            return state.filter(item => item.id !== action.payload);
+            const contacts = state.filter(item => item.id !== action.payload);
+            localStorage.setItem("contacts", JSON.stringify(contacts));
+            return contacts
         default:
             return state;
     }

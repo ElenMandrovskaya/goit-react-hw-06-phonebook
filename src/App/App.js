@@ -1,5 +1,4 @@
-// import { useState, useEffect } from 'react';
-// import { v4 as uuidv4 } from 'uuid';
+import { ToastContainer } from 'react-toastify';
 import { Main, Section, MainTitle } from './App.styled';
 import { ContactForm } from "../components/ContactForm/ContactForm";
 import { ContactList } from "../components/ContactList/ContactList";
@@ -25,14 +24,10 @@ export default function App() {
           <ContactList />
         </Section>
       </Main>
+      <ToastContainer />
       </>
   )
 }
-  // const [contacts, setContacts] = useState(() => {
-  //   return JSON.parse(window.localStorage.getItem("contacts")) ?? defaultComtacts});
 
-  // useEffect(() => {
-  //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
-  // }, [contacts]);
 
 
