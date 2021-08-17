@@ -14,14 +14,23 @@ import 'react-toastify/dist/ReactToastify.css';
 const initContacts = JSON.parse(localStorage.getItem("contacts")) ?? defaultContacts;
 const initFilter = '';
 
-// const checkContact =
-//             // const existingСontact = state.map(item => item.name.toLowerCase() === action.payload.name.toLowerCase());
-//             // if (existingСontact) {
-//             //     return state
-//             // }
+const checkContact = (contacts, name) => {
+    const existingName = contacts.find(
+        (contact) => contact.name.toLowerCase() === name.toLowerCase()
+    );
+    if (existingName) {
+        toast.info('Contact with such name already exists');
+        return existingName;
+    }
+};
+
 const itemReducer = (state = initContacts, action) => {
     switch (action.type) {
         case contactsTypes.ADD:
+            const existingСontact = checkContact(state, action.payload.name);
+            if (existingСontact) {
+                return state;
+            }
             localStorage.setItem("contacts", JSON.stringify([action.payload, ...state]));
             return [action.payload, ...state];
         case contactsTypes.REMOVE:
