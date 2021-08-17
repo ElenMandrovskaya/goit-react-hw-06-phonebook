@@ -7,6 +7,5 @@
 export default {
     ADD: 'contacts/add',
     FILTER: 'contacts/filter',
-    CHECK: 'contacts/check',
     REMOVE: 'contacts/remove',
     }

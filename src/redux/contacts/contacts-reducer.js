@@ -17,16 +17,18 @@ const itemReducer = (state = defaultContacts, action) => {
         case contactsTypes.ADD:
             return [action.payload, ...state];
         case contactsTypes.REMOVE:
-            return state.filter(item => item.id !== action.payload)
+            return state.filter(item => item.id !== action.payload);
         default:
-            return state
+            return state;
     }
 };
 
 const filterReducer = (state = initFilter, action) => {
-     switch (action.type) {
+    switch (action.type) {
+        case contactsTypes.FILTER:
+            return action.payload;
         default:
-            return state
+            return state;
     }
 };
 

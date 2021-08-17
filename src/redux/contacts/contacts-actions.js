@@ -14,3 +14,8 @@ export const removeContact = (id) => ({
     type: contactsTypes.REMOVE,
     payload: id,
 });
+
+export const filterContacts = (value) => ({
+    type: contactsTypes.FILTER,
+    payload: value,
+});

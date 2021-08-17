@@ -27,7 +27,6 @@ export default function App() {
           <Title title="Contacts"/>
           <ContactList
             // contacts={checkContact()}
-            // onDelete={removeContact}
           />
         </Section>
       </Main>
@@ -42,27 +41,7 @@ export default function App() {
   //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
   // }, [contacts]);
 
-  // const addContact = ({ name, number }) => {
-
-  //   if (contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase())) {
-  //     alert(`${name} is already in contacts`);
-  //     return
-  //   }
-  //     const newContact = {
-  //       id: uuidv4(),
-  //       name,
-  //       number,
-  //     }
-  //     setContacts((contacts) => [ newContact, ...contacts])
-  // }
-  // const filterContact = (e) => {
-  //   setFilter(e.currentTarget.value);
-  // }
-
   // const checkContact = () => {
   //   return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
   // }
 
-  // const removeContact = (contactId) => {
-  //    setContacts(prevContacts => prevContacts.filter(contact => contact.id !== contactId))
-  // }
