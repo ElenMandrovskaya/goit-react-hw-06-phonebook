@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { v4 as uuidv4 } from 'uuid';
 import { Form, Label, Input, Button } from "./ContactForm.styled";
 
-export function ContactForm({onSubmit}) {
+export function ContactForm({/*onSubmit*/}) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const nameId = uuidv4();
@@ -27,7 +27,7 @@ export function ContactForm({onSubmit}) {
     
     const handleSubmit = (evt) => {
     evt.preventDefault();
-    onSubmit({ name, number });
+    // onSubmit({ name, number });
     resetForm();
    };
 
