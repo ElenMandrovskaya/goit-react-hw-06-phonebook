@@ -18,16 +18,11 @@ export default function App() {
         </Section>
         <Section>
           <Title title="Search contact" />
-          <Filter
-            // filterValue={filter}
-            // onChange={filterContact}
-          />
+          <Filter />
         </Section>
         <Section>
           <Title title="Contacts"/>
-          <ContactList
-            // contacts={checkContact()}
-          />
+          <ContactList />
         </Section>
       </Main>
       </>
@@ -35,13 +30,9 @@ export default function App() {
 }
   // const [contacts, setContacts] = useState(() => {
   //   return JSON.parse(window.localStorage.getItem("contacts")) ?? defaultComtacts});
-  // const [filter, setFilter] = useState("");
 
   // useEffect(() => {
   //   window.localStorage.setItem('contacts', JSON.stringify(contacts));
   // }, [contacts]);
 
-  // const checkContact = () => {
-  //   return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
-  // }
 
