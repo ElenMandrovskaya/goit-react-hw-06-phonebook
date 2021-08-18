@@ -1,4 +1,3 @@
-// import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import { List, Item, Button } from "./ContactList.styled";
 import { removeContact } from "../../redux/contacts/contacts-actions";
@@ -26,11 +25,3 @@ export function ContactList() {
     )
 }
 
-// ContactList.propTypes = {
-//     contacts: PropTypes.arrayOf(PropTypes.shape({
-//         id: PropTypes.string,
-//         name: PropTypes.string,
-//         number: PropTypes.string,
-//     })),
-//     // onDelete: PropTypes.func,
-// }
